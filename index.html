@@ -286,7 +286,7 @@ Affordable, quality Mathematics coaching for Classes 6–10.
 ✅ Thank you! Your enquiry has been submitted successfully. We will contact you soon!
 </div>
 
-<form id="admissionForm" action="https://formspree.io/f/xyzjklmn" method="POST">
+<form id="admissionForm" action="https://formspree.io/f/xgogoove" method="POST">
 
 <input type="text" name="student_name" placeholder="Student Name" required>
 
@@ -353,33 +353,6 @@ Udaipur, Rajasthan – 313001</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919352950299" target="_blank">💬</a>
-
-<script>
-// Handle form submission
-document.getElementById('admissionForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Show success message
-  document.getElementById('successMessage').style.display = 'block';
-  
-  // Reset form
-  this.reset();
-  
-  // Hide message after 5 seconds
-  setTimeout(function() {
-    document.getElementById('successMessage').style.display = 'none';
-  }, 5000);
-  
-  // Submit to Formspree in the background
-  fetch(this.action, {
-    method: 'POST',
-    body: new FormData(this),
-    headers: {
-      'Accept': 'application/json'
-    }
-  });
-});
-</script>
 
 </body>
 </html>
