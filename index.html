@@ -116,6 +116,7 @@ padding:12px;
 margin:10px 0;
 border:1px solid #ccc;
 border-radius:5px;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 button{
@@ -127,6 +128,21 @@ border:none;
 font-size:18px;
 border-radius:5px;
 cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#0a3d91;
+}
+
+.success-message{
+display:none;
+background:#4CAF50;
+color:white;
+padding:15px;
+border-radius:5px;
+margin:10px 0;
+text-align:center;
 }
 
 footer{
@@ -264,35 +280,45 @@ Affordable, quality Mathematics coaching for Classes 6–10.
 
 <h2>Admission Enquiry</h2>
 
-<form>
+<div class="card">
 
-<input type="text" placeholder="Student Name" required>
+<div id="successMessage" class="success-message">
+✅ Thank you! Your enquiry has been submitted successfully. We will contact you soon!
+</div>
 
-<input type="text" placeholder="Parent Name" required>
+<form id="admissionForm" action="https://formspree.io/f/xyzjklmn" method="POST">
 
-<select required>
+<input type="text" name="student_name" placeholder="Student Name" required>
 
-<option>Select Class</option>
+<input type="text" name="parent_name" placeholder="Parent Name" required>
 
-<option>Class 6</option>
+<select name="class" required>
 
-<option>Class 7</option>
+<option value="">Select Class</option>
 
-<option>Class 8</option>
+<option value="Class 6">Class 6</option>
 
-<option>Class 9</option>
+<option value="Class 7">Class 7</option>
 
-<option>Class 10</option>
+<option value="Class 8">Class 8</option>
+
+<option value="Class 9">Class 9</option>
+
+<option value="Class 10">Class 10</option>
 
 </select>
 
-<input type="tel" placeholder="Mobile Number" required>
+<input type="tel" name="mobile_number" placeholder="Mobile Number" required>
 
-<textarea rows="5" placeholder="Message"></textarea>
+<input type="email" name="email" placeholder="Email Address" required>
+
+<textarea name="message" rows="5" placeholder="Message"></textarea>
 
 <button type="submit">Submit Enquiry</button>
 
 </form>
+
+</div>
 
 </section>
 
@@ -327,6 +353,33 @@ Udaipur, Rajasthan – 313001</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919352950299" target="_blank">💬</a>
+
+<script>
+// Handle form submission
+document.getElementById('admissionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Show success message
+  document.getElementById('successMessage').style.display = 'block';
+  
+  // Reset form
+  this.reset();
+  
+  // Hide message after 5 seconds
+  setTimeout(function() {
+    document.getElementById('successMessage').style.display = 'none';
+  }, 5000);
+  
+  // Submit to Formspree in the background
+  fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this),
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+});
+</script>
 
 </body>
 </html>
