@@ -39,7 +39,7 @@ This website is deployed using **GitHub Pages**.
 
 For inquiries about the website or courses, contact:
 - **Phone**: +91 93529 50299
-- **WhatsApp**: https://wa.me/919352950299
+-
 
 ---
 
