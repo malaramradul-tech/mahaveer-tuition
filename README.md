@@ -39,8 +39,6 @@ This website is deployed using **GitHub Pages**.
 
 For inquiries about the website or courses, contact:
 - **Phone**: +91 93529 50299
--
-
 ---
 
 © 2026 Mahaveer Tuition Classes. All Rights Reserved.
